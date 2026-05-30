@@ -1,4 +1,4 @@
-let toDoListArray = [];
+let toDoListArrary = [];
 const form = document.querySelector(".form");
 const ul = document.querySelector(".toDoList");
 const input= document.querySelector(".form-input");
