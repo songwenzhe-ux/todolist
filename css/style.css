@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Gochi+Hand);
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans+SC:wght@400;500&display=swap');
 body{
     display:flex;
     justify-content:center;
@@ -8,7 +8,7 @@ body{
 
     background-color:#FFFFF0;
 
-    font-family:"Gochi Hand", cursive;
+    font-family:"Gochi Hand", "Noto Sans SC", "Noto Sans JP", cursive, sans-serif;
     font-size:125%;
     color: #F8F6F1;
     text-align:center;
@@ -70,7 +70,7 @@ body{
     background-color:transparent;
 
     font-size:1.3rem;
-    font-family: "Gochi Hand", cursive;
+    font-family: "Gochi Hand", "Noto Sans SC", "Noto Sans JP", cursive;
     color:rgba(63, 62, 65, 0.7);
 }
 .form-input:focus{
@@ -104,13 +104,16 @@ body{
     transform: translateY(4px);
     outline:0;
 }
-.todolist{
+.toDoList{
     text-align: left;
 }
-.todolist li{
+.toDoList li{
     padding: 0.5rem;
+    font-size: 1.3rem;
+    color: #333;
+    cursor: pointer;
 }
-.todolist:hover{
+.toDoList li:hover{
     text-decoration: line-through wavy #00868B;
 }
 @media only screen and (min-width: 500px) {

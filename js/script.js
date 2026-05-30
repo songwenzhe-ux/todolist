@@ -1,11 +1,11 @@
 let toDoListArray = [];
 const form = document.querySelector(".form");
-const ui = document.querySelector(".todolist");
+const ul = document.querySelector(".toDoList");
 const input= document.querySelector(".form-input");
 
 form.addEventListener('submit',e =>{
     e.preventDefault();
-    let itemId = string(Date.now());
+    let itemId = String(Date.now());
     let toDoItem= input.value;
 
     addItemToDOM(itemId,toDoItem);
@@ -23,5 +23,22 @@ function addItemToDOM(itemId,toDoItem){
 
 function addItemToArray(itemId, toDoItem){
     toDoListArray.push({itemId, toDoItem});
-    console.log(addItemToArray);
+    console.log(toDoListArray);
+}
+
+ul.addEventListener('click',e =>{
+    let id = e.target.getAttribute('data-id');
+    if (!id) return;
+    removeItemFromDOM(id);
+    removeItemFromArray(id);
+});
+
+function removeItemFromDOM(id){
+    var li = document.querySelector('[data-id="' + id + '"]');
+    ul.removeChild(li);
+}
+
+function removeItemFromArray(id){
+    toDoListArray= toDoListArray.filter(item => item.itemId !== id);
+    console.log(toDoListArray);
 }
